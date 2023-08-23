@@ -1,15 +1,17 @@
-function combine(n1: number | string, n2: number | string) {
-  let result;
-  if (typeof n1 === "number" && typeof n2 === "number") {
-    result = n1 + n2;
-  } else {
-    result = n1.toString() + n2.toString();
-  }
-  return result;
+function combine(n1: number | string, n2: number | string, resultType: string) {
+  if (
+    (typeof n1 === "number" && typeof n2 === "number") ||
+    resultType === "as-number"
+  )
+    return +n1 + +n2;
+  else return n1.toString() + n2.toString();
 }
 
-const combinedAges = combine(30, 26);
+const combinedAges = combine(30, 26, "as-number");
 console.log(combinedAges);
 
-const combineNames = combine("Max", "Ana");
+const combinedStringAges = combine("30", "26", "as-number");
+console.log(combinedStringAges);
+
+const combineNames = combine("Max", "Ana", "as-text");
 console.log(combineNames);
