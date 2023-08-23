@@ -1,7 +1,13 @@
-const person = {
+const person :{
+    name: string;
+    age: number;
+    hobbies: string[];
+    role: [number, string];
+} = {
     name: 'Elbert',
     age: 21,
-    hobbies: ['Programming', 'Gaming']
+    hobbies: ['Programming', 'Gaming'],
+    role: [1, 'owner']
 };
 
 console.log(person.name);
