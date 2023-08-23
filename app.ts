@@ -1,4 +1,7 @@
-function combine(n1: number | string, n2: number | string, resultType: string) {
+type Combinable = number | string;
+type typeAlias = "as-number" | "as-text";
+
+function combine(n1: Combinable, n2: Combinable, resultType: typeAlias) {
   if (
     (typeof n1 === "number" && typeof n2 === "number") ||
     resultType === "as-number"
